@@ -1,0 +1,123 @@
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+USWDS THEME CUSTOM STYLES
+----------------------------------------
+!! Copy this file to your project's
+   sass root. Don't edit the version
+   in node_modules.
+----------------------------------------
+Custom project SASS goes here.
+
+i.e.
+@include u-padding-right('05');
+----------------------------------------
+*/
+
+
+.cpt-home-hero {
+  background-image: url('../img/cpt/desktop-hero_mono_1396w.jpg');
+  margin: 0 0 units(3) 0;
+
+  &__body {
+    @include grid-container;
+    padding: units(7) 0 units(3);
+
+    @include at-media('desktop') {
+      min-height: 650px;
+    }
+  }
+
+  &__title-container {
+    padding: units(2);
+    background-color: color('white');
+
+    @include at-media('desktop') {
+      @include grid-col(4);
+    }
+  }
+}
+
+.cpt-section {
+  background-color: color($theme-color-cpt-primary-bg);
+}
+
+
+// ***************** FOOTER ***************** //
+.usa-footer__return-to-top a {
+  color: color('gray-cool-80');
+  text-decoration: none;
+}
+
+.cpt-footer {
+  color: color('white');
+  background-color: color($theme-color-cpt-blue);
+
+  .usa-footer__primary-link,
+  .usa-footer__secondary-link a {
+    color: color('white');
+  }
+
+  .usa-footer__secondary-link a {
+    text-decoration: none;
+
+    &:visited {
+      color: color('white');
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__secondary-section {
+    background-color: color($theme-color-cpt-blue);
+
+    .usa-footer__logo-img {
+      max-width: 216px;
+    }
+  }
+
+  &__logo-col,
+  &__links-container {
+    @include u-width(full);
+  }
+
+  &__links-bottom {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+      &:after {
+        content: "|";
+        padding: 0 units(1);
+        color: color('white');
+      }
+    }
+
+    li a {
+      color: color('white');
+      text-decoration: none;
+
+      &:visited {
+        color: color('white');
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    li:last-child a:after {
+      content: '';
+    }
+  }
+}
