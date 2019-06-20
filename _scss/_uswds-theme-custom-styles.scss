@@ -118,19 +118,6 @@ h6 {
     margin-right: units(3);
   }
 
-  h1 {
-    margin-bottom: units(4);
-    padding-bottom: units(3);
-    color: #BF3D02;
-    border-bottom: 3px solid color('white');
-  }
-
-  &__lead {
-    @include u-font('sans', 'lg');
-    font-weight: bold;
-    margin: 0 0 units(3) 0;
-  }
-
   &__body {
     padding: 0;
 
@@ -139,17 +126,49 @@ h6 {
       margin-right: 0;
       padding: units(3) units(4);
     }
+
+    p {
+      @include u-font-size('body', 'sm');
+      font-weight: 300;
+    }
   }
 }
 
 .cpt-section {
   &__body {
-    margin-bottom: units(6);
+    margin-bottom: units(3);
     padding: units(3) units(4) units(5);
 
     @include at-media('tablet-lg') {
       padding-bottom: units(7);
     }
+  }
+
+  &__title,
+  &__title-alt {
+    margin-bottom: units(4);
+    padding-bottom: units(3);
+    border-bottom: 3px solid color('white');
+  }
+
+  &__title {
+    color: #BF3D02;
+  }
+
+  &__body &__lead {
+    @include u-font('sans', 'lg');
+    font-weight: bold;
+    margin: 0 0 units(3) 0;
+  }
+
+  &__lead-alt,
+  &__text-highlight {
+    color: #BF3D02;
+  }
+
+  &__body &__text-strong {
+    @include u-font-family('sans');
+    font-weight: bold;
   }
 }
 
@@ -182,9 +201,6 @@ h6 {
 }
 
 // ***************** CPT SIDENAV ***************** //
-.cpt-section-sidenav {
-}
-
 .cpt-sidenav {
   padding: units(3) units(2) 0;
   max-width: 450px;
