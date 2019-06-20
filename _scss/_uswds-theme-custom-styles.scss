@@ -98,6 +98,8 @@ i.e.
     padding: 0;
 
     @include at-media('tablet-lg') {
+      margin-left: 0;
+      margin-right: 0;
       padding: units(3) units(4);
     }
 
@@ -129,11 +131,13 @@ i.e.
 
 // ***************** FOOTER ***************** //
 .usa-footer__return-to-top a {
+  @include u-font-family('sans');
   color: color('gray-cool-80');
   text-decoration: none;
 }
 
 .cpt-footer {
+  @include u-font-family('sans');
   color: color('white');
   background-color: color($theme-color-cpt-blue);
 
@@ -166,10 +170,19 @@ i.e.
     @include u-width(full);
   }
 
+  .usa-footer__primary-link {
+    @include u-font-size('body', 'lg');
+  }
+
+  .usa-footer__secondary-link {
+    @include u-font-size('body', 'sm');
+  }
+
   &__links-bottom {
     width: 100%;
     padding: 0;
     list-style: none;
+    @include u-font-family('sans');
 
     li {
       display: inline-block;
