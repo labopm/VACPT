@@ -20,10 +20,31 @@ i.e.
 ----------------------------------------
 */
 
+// Typography overrides. Here because the u-font-family mixin
+// isn't available in the theme-typography.scss file
+h1,
+h2 {
+  line-height: 1.35;
+}
+
+h6 {
+  @include u-font-family('sans');
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.usa-intro {
+  font-weight: 300;
+}
+
+// The header otherwise inherits the body font family
 .usa-banner__header {
   @include u-font-family('sans');
 }
 
+
+
+// ***************** HOME HERO ***************** //
 .cpt-home-hero {
   position: relative;
   margin: 0 0 units(3) 0;
@@ -64,7 +85,7 @@ i.e.
     @include u-font('serif', 'xl');
 
     @include at-media('tablet-lg') {
-      max-width: inherit;
+      max-width: 500px;
       @include u-font('serif', '3xl');
       line-height: lh('heading', 3);
     }
@@ -85,13 +106,29 @@ i.e.
   }
 }
 
-.cpt-section {
+
+// ***************** SECTION ***************** //
+.cpt-section,
+.cpt-section--mo-left {
   background-color: color($theme-color-cpt-primary-bg);
   margin: 0 0 units(3) 0;
 
   @include at-media('tablet-lg') {
     margin-left: units(3);
     margin-right: units(3);
+  }
+
+  h1 {
+    margin-bottom: units(4);
+    padding-bottom: units(3);
+    color: #BF3D02;
+    border-bottom: 3px solid color('white');
+  }
+
+  &__lead {
+    @include u-font('sans', 'lg');
+    font-weight: bold;
+    margin: 0 0 units(3) 0;
   }
 
   &__body {
@@ -102,7 +139,23 @@ i.e.
       margin-right: 0;
       padding: units(3) units(4);
     }
+  }
+}
 
+.cpt-section {
+  &__body {
+    margin-bottom: units(6);
+    padding: units(3) units(4) units(5);
+
+    @include at-media('tablet-lg') {
+      padding-bottom: units(7);
+    }
+  }
+}
+
+// ***************** SECTION MEDIA OBJECT -- LEFT variation ***************** //
+.cpt-section--mo-left {
+  &__body {
     p {
       @include u-font-size('body', 8);
     }
@@ -128,6 +181,36 @@ i.e.
   }
 }
 
+// ***************** CPT SIDENAV ***************** //
+.cpt-section-sidenav {
+}
+
+.cpt-sidenav {
+  padding: units(3) units(2) 0;
+  max-width: 450px;
+  border-bottom-color: color('base');
+
+  @include at-media('tablet') {
+    padding: 0;
+  }
+
+  &__item {
+    border-top-color: color('base');
+
+    &:first-child {
+      border-top-width: 3px;
+    }
+  }
+
+  .usa-current {
+    background-color: color('white');
+    color: color($theme-color-cpt-text);
+  }
+}
+
+.cpt-sidenav.usa-sidenav .usa-current:after {
+  display: none;
+}
 
 // ***************** FOOTER ***************** //
 .usa-footer__return-to-top a {
