@@ -8,7 +8,7 @@ permalink: /
   <div class="cpt-home-hero__body">
     <div class="cpt-home-hero__title-container">
       <h1 class="cpt-home-hero__title">
-        Support for  providers who  support Veterans
+        <span>Support for</span><span>providers who </span><span>support Veterans</span>
       </h1>
     </div>
   </div>
@@ -17,8 +17,8 @@ permalink: /
 <section class="cpt-section">
   <div class="grid-container cpt-section__body">
     <div class="grid-row">
-      <div class="grid-col desktop:grid-col-8">
-        <h3>Community providers play a vital role in ensuring that America’s Veterans receive the care they have earned.</h3>
+      <div class="desktop:grid-col-8 cpt-section__text">
+        <h2 class="cpt-section__title">Community providers play a vital role in ensuring that America’s Veterans receive the care they have earned.</h2>
         <p>
           The Community Provider Toolkit is a resource for health care professionals working with Veterans outside of the VA health care system.
         </p>
@@ -26,8 +26,13 @@ permalink: /
           This site offers information and tools relevant to Veterans’ mental health and well-being curated  especially for community providers by clinicians at the VA’s National Center for PTSD and Office of Mental Health and Suicide Prevention.
         </p>
       </div>
-      <div class="grid-col desktop:grid-col-4">
-        <img src="{{ site.baseurl }}/assets/img/cpt/desktop_one-third_314w.jpg">
+      <div class="desktop:grid-col-4 cpt-section__figure">
+        <picture>
+          <source media="(max-width: 480px)" srcset="{{ site.baseurl }}/assets/img/cpt/man-with-tablet-480.jpg">
+          <source media="(min-width: 481px)" srcset="{{ site.baseurl }}/assets/img/cpt/man-with-tablet-650.jpg">
+          <source media="(min-width: 800px)" srcset="{{ site.baseurl }}/assets/img/cpt/man-with-tablet-480.jpg">
+          <img src="{{ site.baseurl }}/assets/img/cpt/man-with-tablet-480" alt="A man with a tablet device.">
+        </picture>
       </div>
     </div>
   </div>

@@ -167,10 +167,10 @@ $theme-font-type-lang: false;
 $theme-font-type-mono: "roboto-mono";
 
 // sans-serif
-$theme-font-type-sans: "public-sans";
+$theme-font-type-sans: "source-sans-pro";
 
 // serif
-$theme-font-type-serif: "public-sans";
+$theme-font-type-serif: "merriweather";
 
 /*
 ----------------------------------------
@@ -284,8 +284,8 @@ tokens.
 */
 
 $theme-font-role-ui: "sans";
-$theme-font-role-heading: "serif";
-$theme-font-role-body: "sans";
+$theme-font-role-heading: "sans";
+$theme-font-role-body: "serif";
 $theme-font-role-code: "mono";
 $theme-font-role-alt: "serif";
 
@@ -304,11 +304,11 @@ $theme-type-scale-3xs: 2;
 $theme-type-scale-2xs: 3;
 $theme-type-scale-xs: 4;
 $theme-type-scale-sm: 5;
-$theme-type-scale-md: 6;
-$theme-type-scale-lg: 9;
+$theme-type-scale-md: 7;
+$theme-type-scale-lg: 10;
 $theme-type-scale-xl: 12;
 $theme-type-scale-2xl: 14;
-$theme-type-scale-3xl: 15;
+$theme-type-scale-3xl: 16;
 
 /*
 ----------------------------------------
@@ -402,8 +402,8 @@ $theme-style-body-element: false;
 $theme-h1-font-size: "2xl";
 $theme-h2-font-size: "xl";
 $theme-h3-font-size: "lg";
-$theme-h4-font-size: "sm";
-$theme-h5-font-size: "xs";
+$theme-h4-font-size: "md";
+$theme-h5-font-size: "sm";
 $theme-h6-font-size: "3xs";
 $theme-heading-line-height: 2;
 $theme-small-font-size: "2xs";

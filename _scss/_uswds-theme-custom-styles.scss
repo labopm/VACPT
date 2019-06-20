@@ -20,32 +20,110 @@ i.e.
 ----------------------------------------
 */
 
+.usa-banner__header {
+  @include u-font-family('sans');
+}
 
 .cpt-home-hero {
-  background-image: url('../img/cpt/desktop-hero_mono_1396w.jpg');
+  position: relative;
   margin: 0 0 units(3) 0;
+  background-image: url('../img/cpt/cpt_mobile_hero_480w.jpg');
+  background-repeat: no-repeat;
+  min-height: 390px;
+
+  @include at-media('mobile-lg') {
+    background-image: url('../img/cpt/desktop-hero_mono_1396w.jpg');
+  }
+
+  @include at-media('tablet-lg') {
+    margin: units(3);
+  }
 
   &__body {
     @include grid-container;
     padding: units(7) 0 units(3);
 
-    @include at-media('desktop') {
+    @include at-media('tablet-lg') {
       min-height: 650px;
     }
   }
 
   &__title-container {
-    padding: units(2);
-    background-color: color('white');
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
 
-    @include at-media('desktop') {
-      @include grid-col(4);
+    @include at-media('tablet-lg') {
+      @include grid-col(7);
+    }
+  }
+
+  &__title {
+    max-width: 300px;
+    font-weight: 300;
+    @include u-font('serif', 'xl');
+
+    @include at-media('tablet-lg') {
+      max-width: inherit;
+      @include u-font('serif', '3xl');
+      line-height: lh('heading', 3);
+    }
+
+    span {
+      display: inline-block;
+      padding: 0 units(2);
+      background-color: color('white');
+
+      &:first-child {
+        padding-top: units(1);
+      }
+
+      &:last-child {
+        padding-bottom: units(1);
+      }
     }
   }
 }
 
 .cpt-section {
   background-color: color($theme-color-cpt-primary-bg);
+  margin: 0 0 units(3) 0;
+
+  @include at-media('tablet-lg') {
+    margin-left: units(3);
+    margin-right: units(3);
+  }
+
+  &__body {
+    padding: 0;
+
+    @include at-media('tablet-lg') {
+      padding: units(3) units(4);
+    }
+
+    p {
+      @include u-font-size('body', 8);
+    }
+  }
+
+  &__text {
+    margin-bottom: units(6);
+    padding: units(3) units(4) 0;
+
+    @include at-media('tablet-lg') {
+      margin-bottom: 0;
+      padding: units(3) units(4);
+    }
+  }
+
+  &__figure {
+    padding: 0;
+
+    @include at-media('tablet') {
+      padding-bottom: units(3);
+      text-align: center;
+    }
+  }
 }
 
 

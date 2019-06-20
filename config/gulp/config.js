@@ -20,8 +20,9 @@ module.exports = {
     jekyll: [
       "_config.yml",
       "_includes/*.html",
-      "assets/img/png,jpg,svg,}",
+      "assets/img/**/*.{png,jpg,svg}",
       "_layouts/*.html",
+      "home.html",
       "pages/**/*.{html,markdown,md,yml,json,txt,xml}"
     ],
     styles: ["_scss/*.scss", "_scss/components/*.scss", "_scss/layouts/*.scss"]
