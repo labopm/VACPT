@@ -178,6 +178,10 @@ h6 {
     color: #BF3D02;
   }
 
+  &__title {
+    width: 100%
+  }
+
   &__home-alt {
     @include u-font('sans', '2xl');
   }
@@ -191,6 +195,10 @@ h6 {
   &__body &__intro {
     @include u-font('serif', 'sm');
     line-height: lh('body', 6);
+  }
+
+  &__body &__intro-accordion {
+    margin: units(2) 0;
   }
 
   &__lead-alt,
@@ -336,6 +344,38 @@ h6 {
 .cpt-sidenav.usa-sidenav .usa-current:after {
   display: none;
 }
+
+
+// ***************** CPT ACCORDION ***************** //
+.cpt-accordion {
+  border-bottom: 1px solid color('base');
+  max-width: 630px;
+
+  &__heading {
+    @include u-font('sans', 'md');
+  }
+
+  &__heading:not(:first-child) {
+    margin: 0;
+  }
+
+  &__button {
+    background-color: transparent;
+    border-top: 1px solid color('base');
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &__content {
+    padding: units(3);
+    background-color: transparent;
+  }
+
+}
+
+
 
 // ***************** FOOTER ***************** //
 .usa-footer__return-to-top a {
