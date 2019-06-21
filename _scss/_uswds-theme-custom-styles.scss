@@ -52,6 +52,7 @@ h6 {
   background-repeat: no-repeat;
   background-position: center;
   min-height: 390px;
+  max-width: 87rem;
 
   @include at-media('mobile-lg') {
     background-image: url('../img/cpt/cpt_hero_tablet-lg_832.jpg');
@@ -62,12 +63,22 @@ h6 {
     margin: units(3);
   }
 
+  @include at-media('widescreen') {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 87rem;
+  }
+
   &__body {
     @include grid-container;
     padding: units(7) 0 units(3);
 
     @include at-media('tablet-lg') {
       min-height: 650px;
+    }
+
+    @include at-media('desktop') {
+      position: relative;
     }
   }
 
@@ -120,7 +131,7 @@ h6 {
     margin-right: units(3);
   }
 
-  @include at-media('desktop') {
+  @include at-media('widescreen') {
     margin-left: auto;
     margin-right: auto;
     max-width: 87rem;
@@ -239,6 +250,10 @@ h6 {
 // ***************** SECTION MEDIA OBJECT -- LEFT variation ***************** //
 .cpt-section--mo-left {
   &__body {
+    @include at-media('desktop') {
+      @include grid-container;
+    }
+
     p {
       @include u-font-size('body', 8);
     }
@@ -250,7 +265,7 @@ h6 {
 
     @include at-media('tablet-lg') {
       margin-bottom: 0;
-      padding: 0 0 units(4) 0;
+      padding: 0 units(2) units(4) 0;
     }
   }
 
