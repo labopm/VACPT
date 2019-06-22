@@ -43,6 +43,52 @@ h6 {
 }
 
 
+// ***************** HEADER ***************** //
+.cpt-header .cpt-navbar {
+  background-color: color($theme-color-cpt-blue);
+
+  @include at-media('desktop') {
+    max-width: inherit;
+  }
+
+  .cpt-logo {
+    @include at-media('desktop') {
+      max-width: 64rem;
+      padding: 0 units(4);
+    }
+  }
+
+  .cpt-logo a {
+    @include u-font-family('serif');
+    color: color('white');
+
+    &:focus {
+      outline: .25rem solid #fff;
+    }
+  }
+
+  .cpt-menu-btn {
+    color: color($theme-color-cpt-blue);
+    background-color: color('white');
+    font-weight: bold;
+  }
+}
+
+.cpt-header .cpt-nav {
+  .cpt-nav__primary {
+    @include u-font-family('sans');
+  }
+
+  .cpt-nav__link {
+    line-height: lh('body', 2);
+  }
+}
+
+.cpt-header + .cpt-main {
+  @include at-media('desktop') {
+    border-top: 0;
+  }
+}
 
 // ***************** HOME HERO ***************** //
 .cpt-home-hero {
@@ -60,7 +106,7 @@ h6 {
 
   @include at-media('tablet-lg') {
     background-image: url('../img/cpt/cpt_hero_desktop_1392.jpg');
-    margin: units(3);
+    margin: 0 units(3) units(3) units(3);
   }
 
   @include at-media('widescreen') {

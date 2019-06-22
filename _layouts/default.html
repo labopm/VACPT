@@ -5,7 +5,8 @@
 <body class="l-{{page.section}}">
   <a class="usa-skipnav" href="#main-content">Skip to main content</a>
   {% include _banner.html %}
-  <main id="main-content" role="main" class="usa-layout-docs lab-content">
+  {% include _header.html %}
+  <main id="main-content" role="main" class="usa-layout-docs cpt-main">
     {{ content }}
   </main>
   {% include _footer.html %}
