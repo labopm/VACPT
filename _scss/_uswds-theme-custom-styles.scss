@@ -413,6 +413,68 @@ h6 {
   }
 }
 
+// ***************** CPT READ MORE ***************** //
+.cpt-section-read-more__content {
+  &[aria-expanded="false"],
+  &[aria-expanded="true"] {
+    background-image: none;
+  }
+}
+
+[data-object="reveal-more"][data-readmore] {
+  transition: height 500ms;
+  overflow: hidden;
+}
+
+[data-object="reveal-more"] + [data-readmore-toggle],
+[data-object="reveal-more"][data-readmore] {
+  display: block;
+  width: 100%;
+}
+
+/* Fades the bottom of the text and smoothly transitions.
+    Relies upon the readmore.js library: http://jedfoster.com/Readmore.js/
+    From http://jsbin.com/xuciqap/edit?css,js,output */
+.cpt-section-read-more {
+  display: block;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(245, 240, 230, 1));
+
+    // Be sure to use the same speed value as in your Readmore configuration,
+    // keeping in mind that CSS transition speed is stated in seconds.
+    transition: height 0.5s;
+  }
+
+  // Set the height of the gradient to 80 when CLOSED
+  // Also when transitioning from OPEN to CLOSED
+  &[aria-expanded="false"]:before,
+  &[aria-expanded="true"].transitioning:before {
+    height: 80px;
+  }
+
+  &[aria-expanded="false"].transitioning:before {
+    height: 0;
+  }
+
+  &__link {
+    padding: units(1) 0;
+    font-weight: bold;
+    color: color($theme-color-cpt-text);
+  }
+}
+
+
+
 // ***************** CPT SIDENAV ***************** //
 .cpt-section-sidenav {
   position: sticky;

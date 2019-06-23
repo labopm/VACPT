@@ -2,7 +2,7 @@
 <html lang="en">
 {% include _head.html %}
 
-<body class="l-{{page.section}}">
+<body> 
   <a class="usa-skipnav" href="#main-content">Skip to main content</a>
   {% include _banner.html %}
   {% include _header.html %}
@@ -16,6 +16,9 @@
   <script>
     svg4everybody();
   </script>
+  <script src="{{ site.baseurl }}/assets/js/vendor/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/vendor/readmore.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/reveal-more.js"></script>
 </body>
 
 </html>
