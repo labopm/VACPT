@@ -55,6 +55,8 @@ h6 {
     @include at-media('desktop') {
       max-width: 64rem;
       padding: 0 units(4);
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -168,18 +170,13 @@ h6 {
 
 // ***************** SECTION ***************** //
 .cpt-section,
-.cpt-section--mo-left {
+.cpt-section--mo {
   background-color: color($theme-color-cpt-primary-bg);
   margin: 0 0 units(3) 0;
 
   @include at-media('tablet-lg') {
     margin-left: units(3);
     margin-right: units(3);
-  }
-
-  @include at-media('desktop') {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   &__body {
@@ -201,6 +198,11 @@ h6 {
 
 .cpt-section {
   max-width: 64rem;
+
+  @include at-media('desktop') {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   &__body {
     margin-bottom: units(3);
@@ -274,10 +276,21 @@ h6 {
     @include u-font('sans', 'xl');
   }
 
-  &__body &__text-strong {
+  &__body &__caption,
+  &--mo__body &__caption {
     @include u-font-family('sans');
+    @include u-font-size('body', 'sm');
     font-weight: bold;
     max-width: inherit;
+  }
+
+  &__body &__caption--center,
+  &__caption--center {
+    text-align: center;
+
+    @include at-media('tablet-lg') {
+      text-align: left;
+    }
   }
 
   &__interest-list {
@@ -300,6 +313,22 @@ h6 {
       margin-bottom: 0;
     }
   }
+
+  &__chevron-container {
+    display: none;
+
+    @include at-media('tablet-lg') {
+      display: block;
+    }
+  }
+
+  &__chevron-container--right {
+    text-align: right;
+  }
+
+  &__chevron {
+    max-width: 26px;
+  }
 }
 
 // ***************** SECTION -- SECONDARY variation ***************** //
@@ -318,8 +347,18 @@ h6 {
   }
 }
 
-// ***************** SECTION MEDIA OBJECT -- LEFT variation ***************** //
-.cpt-section--mo-left {
+// ***************** SECTION MEDIA OBJECT ***************** //
+.cpt-section--mo {
+  @include at-media('desktop') {
+    margin-left: units(3);
+    margin-right: units(3);
+  }
+
+  @include at-media('widescreen') {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &__body {
     p {
       @include u-font-size('body', 8);
@@ -344,6 +383,16 @@ h6 {
       text-align: center;
     }
   }
+
+  &__figure-pad {
+    @include at-media('tablet-lg') {
+      padding-right: units(2);
+    }
+    @include at-media('desktop') {
+      padding-right: units(3);
+    }
+  }
+
 }
 
 // ***************** CPT VIDEO ***************** //
