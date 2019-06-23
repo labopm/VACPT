@@ -243,6 +243,12 @@ h6 {
     line-height: lh('body', 6);
   }
 
+  &__body &__intro-large {
+    font-weight: 300;
+    @include u-font('serif', '3xl');
+    line-height: lh('heading', 3);
+  }
+
   &__body &__intro-accordion {
     margin: units(2) 0;
   }
